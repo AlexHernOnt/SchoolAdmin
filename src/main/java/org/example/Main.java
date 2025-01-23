@@ -89,11 +89,18 @@ import java.util.ArrayList;
                             try {
                                 int userInputInt = sc.nextInt();
 
-                                if (userInputInt )
-
+                                if (userInputInt > 100 || userInputInt < 0)
+                                    throw new Exception();
                                 System.out.println("The High performers are:");
-                                for (int i = 0; i < students.size(); ++i)
-                                    System.out.println(students.get(i));
+
+                                for (String studentName : students.keySet()) {
+                                    if (calAverage(students.get(studentName)) >= userInputInt)
+                                        System.out.println(studentName + ": " + calAverage(students.get(studentName)));
+                                }
+
+
+
+
 
                             } catch (Exception e) {
                                 System.out.println("Incorrect Grade");
