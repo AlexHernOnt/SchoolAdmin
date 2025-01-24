@@ -57,7 +57,7 @@ import java.util.ArrayList;
                                     System.out.println("Grade Saved!");
 
                                 } catch (Exception e) {
-                                    System.out.println(e.getMessage());
+                                    System.out.println("Error inputted grade");
                                 }
 
                             } catch (Exception e) {
@@ -91,43 +91,24 @@ import java.util.ArrayList;
 
                                 if (userInputInt > 100 || userInputInt < 0)
                                     throw new Exception();
-                                System.out.println("The High performers are:");
+                                    System.out.println("The High performers are:");
 
                                 for (String studentName : students.keySet()) {
                                     if (calAverage(students.get(studentName)) >= userInputInt)
                                         System.out.println(studentName + ": " + calAverage(students.get(studentName)));
                                 }
-
-
-
-
-
                             } catch (Exception e) {
                                 System.out.println("Incorrect Grade");
                             }
                             break;
                         }
                     }
-
-
-
-
             } catch (Exception e) {
                     System.out.println("Please input a number");
             }
 
+
             } while (!userInput.equals("exit"));
-
-
-//
-//        try  {
-//            if (userName.length() > 5 || userName.length() < 3)
-//                throw new Exception("Incorrect number of chars");
-//            System.out.println("Username is: " + userName);  // Output user input
-//        } catch (Exception e) {
-//            System.out.println("Exception " + e.getMessage());
-//        }
-
         }
 
         static int calAverage(List<Integer> list) {
